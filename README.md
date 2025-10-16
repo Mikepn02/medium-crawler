@@ -88,6 +88,25 @@ Server (from `server/`)
 - Server: compile TypeScript if you add a build step (currently `pnpm dev` runs via nodemon/ts-node tooling). For production, consider adding scripts to transpile to JavaScript and run with Node.
 - Client: `pnpm build` generates a production build under `client/dist`.
 
+### Docker (Backend)
+A Dockerfile is provided under `server/` to containerize the API.
+
+Build the image (from project root or server folder):
+- `cd server`
+- `docker build -t medium-backend .`
+
+Run the container exposing port 5000:
+- `docker run --rm -p 5000:5000 --name medium-backend medium-backend`
+
+Configure a different port if needed:
+- `docker run --rm -e PORT=8080 -p 8080:8080 medium-backend`
+
+Health check:
+- Open `http://localhost:5000/` -> "Hello World"
+- API endpoint: `GET http://localhost:5000/api/medium/:username`
+
+Client note: Set `VITE_API_URL` to your container's URL (e.g., `http://localhost:5000`).
+
 ## Troubleshooting
 
 - Client cannot reach API:
