@@ -1,9 +1,7 @@
-// Solution 4: Use rss-parser library (RECOMMENDED - handles headers automatically)
 
 import Parser from 'rss-parser';
 import { Article } from '../types/article';
 
-// Custom type for Medium RSS items
 interface MediumRSSItem {
   title?: string;
   link?: string;
@@ -63,5 +61,3 @@ export const getArticles = async (username: string): Promise<Article[]> => {
   }
 };
 
-// Install: npm install rss-parser
-// For TypeScript: npm install --save-dev @types/rss-parser
