@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+/* --- Fonts --- */
+:root {
+  --font-geist-sans: "Geist Sans", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+}
+
+/* --- Colors --- */
+:root {
+  /* Example: primary colors */
+  --primary: 220 90% 56%;
+  --primary-foreground: 0 0% 100%;
+
+  --background: 0 0% 100%;
+  --foreground: 210 10% 20%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 210 10% 20%;
+
+  --border: 210 10% 80%;
+  --ring: 210 10% 80%;
+
+  /* Add other color variables from your config */
+}
+
+/* --- Font Families --- */
+body {
+  font-family: var(--font-geist-sans);
+}
+code {
+  font-family: var(--font-geist-mono);
+}
+
+/* --- Keyframes --- */
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(10px); }
+  80% { opacity: 0.6; }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes fade-down {
+  0% { opacity: 0; transform: translateY(-10px); }
+  80% { opacity: 0.6; }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes spinner {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes blink {
+  0% { opacity: 0.2; }
+  20% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+@keyframes pulse {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+/* --- Animations --- */
+.animate-fade-up { animation: fade-up 0.5s; }
+.animate-fade-down { animation: fade-down 0.5s; }
+.animate-fade-in { animation: fade-in 0.2s ease-out forwards; }
+.animate-spinner { animation: spinner 1.2s linear infinite; }
+.animate-blink { animation: blink 1.4s infinite both; }
+.animate-pulse { animation: pulse 1s linear infinite alternate; }
+.animate-scale-in { animation: scale-in 0.2s cubic-bezier(0.16,1,0.3,1); }
+.animate-accordion-down { animation: accordion-down 0.2s ease-out; }
+.animate-accordion-up { animation: accordion-up 0.2s ease-out; }
+
+/* --- Border Radius --- */
+.rounded-lg { border-radius: var(--radius); }
+.rounded-md { border-radius: calc(var(--radius) - 2px); }
+.rounded-sm { border-radius: calc(var(--radius) - 4px); }
