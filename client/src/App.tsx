@@ -5,7 +5,6 @@ import { Background } from "@/components/background";
 import { BookOpen } from "@/components/icons";
 import { MainLayout } from "@/components/layout/MainLayout";
 import SearchBar from "@/components/ui/search-bar";
-import ArticleCard from "@/components/ArticleCard";
 import type { Article } from "@/api/medium";
 
 export default function Home() {
